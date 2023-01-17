@@ -6,7 +6,9 @@ public interface CrudService<T> {
 
     T findById(Long id);
 
-    T findByLastName(String lastName);
+    boolean delete(T object);
+
+    boolean deleteById(Long id);
 
     T save(T owner);
 
