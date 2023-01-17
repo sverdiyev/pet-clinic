@@ -2,7 +2,7 @@ package com.sv.petclinic.services;
 
 import java.util.Set;
 
-public interface BasicService<T> {
+public interface CrudService<T> {
 
     T findById(Long id);
 
