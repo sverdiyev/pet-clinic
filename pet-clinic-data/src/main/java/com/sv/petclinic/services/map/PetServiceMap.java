@@ -23,10 +23,6 @@ public class PetServiceMap extends AbstractMapService<Pet> implements PetService
         return super.findAll();
     }
 
-    @Override
-    public Pet save(Long id, Pet obj) {
-        return super.save(id, obj);
-    }
 
     @Override
     public boolean delete(Pet obj) {

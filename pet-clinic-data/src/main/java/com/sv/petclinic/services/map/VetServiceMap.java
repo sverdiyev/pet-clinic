@@ -24,11 +24,6 @@ public class VetServiceMap extends AbstractMapService<Vet> implements VetService
     }
 
     @Override
-    public Vet save(Long id, Vet obj) {
-        return super.save(id, obj);
-    }
-
-    @Override
     public boolean delete(Vet obj) {
         return super.delete(obj);
     }

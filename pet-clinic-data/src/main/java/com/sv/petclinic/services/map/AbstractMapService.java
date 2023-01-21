@@ -17,18 +17,13 @@ public abstract class AbstractMapService<T extends BaseEntity> {
         return map.get(id);
     }
 
-    T save(Long id, T obj) {
-
-        if (obj.getId() == null)
-            return map.put(getNextId(), obj);
-
-        return map.put(id, obj);
-    }
 
     T save(T obj) {
 
-        if (obj.getId() == null)
-            return map.put(getNextId(), obj);
+        if (obj.getId() == null) {
+            var newObj = handleObjWithNoId(obj);
+            return map.put(newObj.getId(), newObj);
+        }
 
         return map.put(obj.getId(), obj);
     }
@@ -41,7 +36,19 @@ public abstract class AbstractMapService<T extends BaseEntity> {
         return map.remove(id) != null;
     }
 
+
+    private T handleObjWithNoId(T obj) {
+        var id = getNextId();
+        obj.setId(id);
+        return obj;
+    }
+
     public Long getNextId() {
+
+        System.out.println(map.isEmpty());
+        if (map.isEmpty()) return 1L;
+
+        System.out.println(Collections.max(map.keySet()));
         return Collections.max(map.keySet()) + 1;
     }
 }
