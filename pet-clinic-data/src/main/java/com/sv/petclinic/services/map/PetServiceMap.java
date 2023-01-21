@@ -15,7 +15,7 @@ public class PetServiceMap extends AbstractMapService<Pet> implements PetService
 
     @Override
     public Pet save(Pet owner) {
-        return super.save(owner.getId(), owner);
+        return super.save(owner);
     }
 
     @Override

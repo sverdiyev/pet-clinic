@@ -24,14 +24,12 @@ public class DataLoader implements CommandLineRunner {
         Owner owner = new Owner();
         owner.setFirstName("sasha");
         owner.setLastName("verd");
-        owner.setId(1L);
 
         ownerServiceMap.save(owner);
 
         Vet vet = new Vet();
         vet.setFirstName("sasha");
         vet.setLastName("verd");
-        vet.setId(2L);
 
         vetServiceMap.save(vet);
 
