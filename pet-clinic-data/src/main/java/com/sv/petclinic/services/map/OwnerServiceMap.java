@@ -1,11 +1,11 @@
 package com.sv.petclinic.services.map;
 
 import com.sv.petclinic.model.Owner;
-import com.sv.petclinic.services.CrudService;
+import com.sv.petclinic.services.OwnerService;
 
 import java.util.Set;
 
-public class OwnerServiceMap extends AbstractMapService<Owner> implements CrudService<Owner> {
+public class OwnerServiceMap extends AbstractMapService<Owner> implements OwnerService {
     @Override
     public Owner findById(Long id) {
         return super.findById(id);
