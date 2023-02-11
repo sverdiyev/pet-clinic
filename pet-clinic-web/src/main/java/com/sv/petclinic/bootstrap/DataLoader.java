@@ -10,29 +10,29 @@ import org.springframework.stereotype.Component;
 @Component
 public class DataLoader implements CommandLineRunner {
 
-    private final OwnerServiceMap ownerServiceMap;
-    private final VetServiceMap vetServiceMap;
+  private final OwnerServiceMap ownerServiceMap;
+  private final VetServiceMap vetServiceMap;
 
-    public DataLoader(OwnerServiceMap ownerServiceMap, VetServiceMap vetServiceMap) {
-        this.ownerServiceMap = ownerServiceMap;
-        this.vetServiceMap = vetServiceMap;
-    }
+  public DataLoader(OwnerServiceMap ownerServiceMap, VetServiceMap vetServiceMap) {
+    this.ownerServiceMap = ownerServiceMap;
+    this.vetServiceMap = vetServiceMap;
+  }
 
-    @Override
-    public void run(String... args) throws Exception {
+  @Override
+  public void run(String... args) throws Exception {
 
-        Owner owner = new Owner();
-        owner.setFirstName("sasha");
-        owner.setLastName("verd");
+    Owner owner = new Owner();
+    owner.setFirstName("sasha");
+    owner.setLastName("verd");
 
-        ownerServiceMap.save(owner);
+    ownerServiceMap.save(owner);
 
-        Vet vet = new Vet();
-        vet.setFirstName("sasha");
-        vet.setLastName("verd");
+    Vet vet = new Vet();
+    vet.setFirstName("sasha");
+    vet.setLastName("verd");
 
-        vetServiceMap.save(vet);
+    vetServiceMap.save(vet);
 
-        System.out.println("LOADING");
-    }
+    System.out.println("LOADING");
+  }
 }
