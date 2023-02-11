@@ -1,31 +1,17 @@
 package com.sv.petclinic.model;
 
+import javax.persistence.Column;
+import javax.persistence.MappedSuperclass;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
+@EqualsAndHashCode(callSuper = true)
+@MappedSuperclass
+@Data
 public class Person extends BaseEntity {
 
+  @Column(name = "first_name") //it defaults to snake case anyway, just showing as an example
   private String firstName;
   private String lastName;
 
-  public String getFirstName() {
-    return firstName;
-  }
-
-  public void setFirstName(String firstName) {
-    this.firstName = firstName;
-  }
-
-  public String getLastName() {
-    return lastName;
-  }
-
-  public void setLastName(String lastName) {
-    this.lastName = lastName;
-  }
-
-  @Override
-  public String toString() {
-    return "Person{" +
-      "firstName='" + firstName + '\'' +
-      ", lastName='" + lastName + '\'' +
-      '}';
-  }
 }
